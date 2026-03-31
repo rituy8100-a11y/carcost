@@ -1,7 +1,7 @@
 import { CalculatorInfo } from './types';
 
 export const SITE_NAME = '카코스트';
-export const SITE_URL = 'https://carcost.vercel.app';
+export const SITE_URL = 'https://carcost-five.vercel.app';
 export const SITE_DESCRIPTION = '자동차 연비, 주유비, 자동차세, 유지비를 한번에 계산하세요. 무료 자동차 비용 계산기';
 
 export const FUEL_TYPES = [
