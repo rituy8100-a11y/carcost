@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
-import Script from 'next/script';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/constants';
@@ -49,18 +48,19 @@ export default function RootLayout({
 
   return (
     <html lang="ko">
+      <head>
+        {adsenseId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
+            crossOrigin="anonymous"
+          />
+        )}
+      </head>
       <body className={`${notoSansKR.className} antialiased min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        {adsenseId && (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
-        )}
       </body>
     </html>
   );
