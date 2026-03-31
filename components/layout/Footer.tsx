@@ -39,8 +39,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} 카코스트. All rights reserved.
+        <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
+          <span>© {new Date().getFullYear()} 카코스트. All rights reserved.</span>
+          <Link
+            href="/privacy"
+            className="hover:text-blue-600 transition-colors"
+          >
+            개인정보처리방침
+          </Link>
         </div>
       </div>
     </footer>
