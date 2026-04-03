@@ -1,29 +1,33 @@
 import Link from 'next/link';
-import { CALCULATORS } from '@/lib/constants';
+import { NAV_ITEMS, SITE_NAME } from '@/lib/constants';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 mt-16">
-      <div className="max-w-6xl mx-auto px-4 py-10">
+    <footer className="border-t border-white/5 bg-brand-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-bold text-gray-900 mb-3">카코스트</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-2xl">🏎️</span>
+              <span className="text-xl font-bold text-gradient">{SITE_NAME}</span>
+            </div>
             <p className="text-sm text-gray-500 leading-relaxed">
-              자동차 비용을 한눈에 계산하세요.
-              연비, 주유비, 자동차세, 유지비 계산기를 무료로 제공합니다.
+              슈퍼카 갤러리, 자동차 퀴즈, 스펙 배틀까지.
+              <br />
+              자동차 덕후를 위한 인터랙티브 콘텐츠.
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold text-gray-900 mb-3">계산기</h3>
+            <h3 className="text-sm font-semibold text-gray-300 mb-4">콘텐츠</h3>
             <ul className="space-y-2">
-              {CALCULATORS.map((calc) => (
-                <li key={calc.href}>
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={calc.href}
-                    className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                    href={item.href}
+                    className="text-sm text-gray-500 hover:text-white transition-colors"
                   >
-                    {calc.title}
+                    {item.icon} {item.title}
                   </Link>
                 </li>
               ))}
@@ -31,22 +35,24 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-gray-900 mb-3">안내</h3>
-            <p className="text-sm text-gray-500 leading-relaxed">
-              본 사이트의 계산 결과는 참고용이며, 실제 금액과 차이가 있을 수 있습니다.
-              정확한 세금 정보는 관할 시/군/구청에 문의하세요.
-            </p>
+            <h3 className="text-sm font-semibold text-gray-300 mb-4">정보</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-gray-500 hover:text-white transition-colors"
+                >
+                  개인정보처리방침
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
-          <span>© {new Date().getFullYear()} 카코스트. All rights reserved.</span>
-          <Link
-            href="/privacy"
-            className="hover:text-blue-600 transition-colors"
-          >
-            개인정보처리방침
-          </Link>
+        <div className="mt-8 pt-8 border-t border-white/5 text-center">
+          <p className="text-xs text-gray-600">
+            © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

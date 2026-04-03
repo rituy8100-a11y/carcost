@@ -29,7 +29,7 @@ export default function AdBanner({
   if (!isProduction) {
     return (
       <div
-        className={`bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm ${className}`}
+        className={`bg-white/5 border-2 border-dashed border-white/10 rounded-lg flex items-center justify-center text-gray-600 text-sm ${className}`}
         style={{ minHeight: format === 'horizontal' ? 90 : 250 }}
       >
         광고 영역

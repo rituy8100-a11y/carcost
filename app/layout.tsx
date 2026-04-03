@@ -13,24 +13,25 @@ const notoSansKR = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} - 자동차 비용 계산기`,
+    default: `${SITE_NAME} - 자동차 덕후를 위한 인터랙티브 콘텐츠`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    '자동차 비용 계산기',
-    '연비 계산기',
-    '주유비 계산기',
-    '자동차세 계산기',
-    '유지비 계산기',
+    '슈퍼카',
+    '자동차 퀴즈',
+    '스펙 비교',
+    '자동차 갤러리',
+    '드림카',
     '카코스트',
+    '자동차 타임라인',
   ],
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} - 자동차 비용 계산기`,
+    title: `${SITE_NAME} - 자동차 덕후를 위한 인터랙티브 콘텐츠`,
     description: SITE_DESCRIPTION,
   },
   metadataBase: new URL(SITE_URL),
@@ -47,7 +48,7 @@ export default function RootLayout({
   const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <head>
         {adsenseId && (
           <script
@@ -57,9 +58,9 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className={`${notoSansKR.className} antialiased min-h-screen flex flex-col`}>
+      <body className={`${notoSansKR.className} antialiased min-h-screen flex flex-col bg-brand-dark text-gray-100`}>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-16">{children}</main>
         <Footer />
       </body>
     </html>

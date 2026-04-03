@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold text-gray-900 mb-8">
+      <h1 className="text-2xl font-bold text-white mb-8">
         개인정보처리방침
       </h1>
 
-      <div className="prose prose-sm text-gray-600 space-y-6">
+      <div className="prose prose-sm text-gray-400 space-y-6">
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-2">
+          <h2 className="text-lg font-bold text-white mb-2">
             1. 개인정보의 수집 및 이용 목적
           </h2>
           <p>
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-2">
+          <h2 className="text-lg font-bold text-white mb-2">
             2. 광고 서비스 (Google AdSense)
           </h2>
           <p>
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
               href="https://www.google.com/settings/ads"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-red-400 hover:underline"
             >
               https://www.google.com/settings/ads
             </a>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-2">
+          <h2 className="text-lg font-bold text-white mb-2">
             3. 쿠키(Cookie) 사용
           </h2>
           <p>
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-2">
+          <h2 className="text-lg font-bold text-white mb-2">
             4. 개인정보의 보유 및 파기
           </h2>
           <p>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-2">
+          <h2 className="text-lg font-bold text-white mb-2">
             5. 이용자의 권리
           </h2>
           <p>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-2">
+          <h2 className="text-lg font-bold text-white mb-2">
             6. 개인정보처리방침의 변경
           </h2>
           <p>

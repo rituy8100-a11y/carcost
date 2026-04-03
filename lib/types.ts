@@ -1,64 +1,66 @@
-export interface FuelEfficiencyInput {
-  distance: number;
-  fuelUsed: number;
+export interface CarSpecs {
+  engine: string;
+  hp: number;
+  torque: number;
+  zeroToHundred: number;
+  topSpeed: number;
+  price: string;
+  weight: number;
+  drivetrain: string;
 }
 
-export interface FuelEfficiencyResult {
-  efficiency: number;
+export interface Car {
+  id: string;
+  name: string;
+  nameKo: string;
+  brand: string;
+  brandKo: string;
+  year: number;
+  description: string;
+  specs: CarSpecs;
+  image: string;
+  category: 'supercar' | 'sports' | 'luxury' | 'classic' | 'ev';
+  decade: string;
 }
 
-export interface FuelCostInput {
-  distance: number;
-  fuelEfficiency: number;
-  fuelPrice: number;
-}
-
-export interface FuelCostResult {
-  fuelNeeded: number;
-  totalCost: number;
-}
-
-export interface CarTaxInput {
-  displacement: number;
-  isElectric: boolean;
-  isCommercial: boolean;
-  vehicleAge: number;
-}
-
-export interface CarTaxResult {
-  baseTax: number;
-  ageReductionRate: number;
-  ageReduction: number;
-  reducedTax: number;
-  educationTax: number;
-  totalAnnualTax: number;
-  halfYearTax: number;
-}
-
-export interface MaintenanceInput {
-  monthlyInsurance: number;
-  monthlyFuel: number;
-  monthlyParking: number;
-  monthlyMaintenance: number;
-  annualInspection: number;
-  annualTax: number;
-}
-
-export interface MaintenanceResult {
-  monthlyTotal: number;
-  yearlyTotal: number;
-  breakdown: {
-    label: string;
-    monthly: number;
-    yearly: number;
-    percentage: number;
+export interface QuizQuestion {
+  id: number;
+  question: string;
+  options: {
+    text: string;
+    scores: Record<string, number>;
   }[];
 }
 
-export interface CalculatorInfo {
+export interface QuizResult {
+  id: string;
   title: string;
   description: string;
+  matchedCar: string;
+  traits: string[];
+}
+
+export interface TimelineEntry {
+  decade: string;
+  title: string;
+  description: string;
+  cars: string[];
+  highlight: string;
+}
+
+export interface BuilderOption {
+  step: string;
+  stepKo: string;
+  choices: {
+    id: string;
+    label: string;
+    value: string;
+  }[];
+}
+
+export interface NavItem {
+  title: string;
   href: string;
   icon: string;
-  color: string;
+  description: string;
 }
